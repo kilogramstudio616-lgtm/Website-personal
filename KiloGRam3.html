@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiloGram Studios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Activities Grid */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .activity-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Form Styles */
+        form {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: 600;
+            text-align: left;
+        }
+
+        input {
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/85bb9bb2-073b-4aca-a0b4-dab764ff55d2.png" alt="Logo KiloGram Studios - Desain modern dengan inisial KG dalam gradien ungu dan biru, simbol komunitas kreatif programmer muda" class="logo" onerror="this.style.display='none'">
+                    <div class="logo-text">KiloGram Studios</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#activities">Kegiatan</a></li>
+                        <li><a href="#join">Bergabung</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>KiloGram Studios</h1>
+            <p>Komunitas kreatif untuk programmer dan editor muda di bawah 17 tahun</p>
+        </section>
+
+        <section id="about">
+            <div class="section-content">
+                <h2>Tentang Kami</h2>
+                <p>KiloGram Studios adalah komunitas kreatif bagi programmer dan editor muda di bawah usia 17 tahun. Di sini, kita saling berbagi pengalaman, belajar bareng, dan berkembang bersama dalam dunia perangkat lunak—mulai dari coding, desain, hingga editing. Karena karya hebat bisa dimulai sejak dini, bersama teman-teman yang punya semangat yang sama.</p>
+            </div>
+        </section>
+
+        <section id="activities">
+            <div class="section-content">
+                <h2>Kegiatan Kami</h2>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h3>Workshop Coding</h3>
+                        <p>Belajar programming dari dasar hingga advanced</p>
+                    </div>
+                    <div class="activity-card">
+                        <h3>Pelatihan Desain</h3>
+                        <p>Mengasah skill desain grafis dan UI/UX</p>
+                    </div>
+                    <div class="activity-card">
+                        <h3>Editing Video</h3>
+                        <p>Kompetisi dan workshop editing video kreatif</p>
+                    </div>
+                    <div class="activity-card">
+                        <h3>Sharing Session</h3>
+                        <p>Diskusi dan berbagi pengalaman bersama</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join">
+            <div class="section-content">
+                <h2>Bergabunglah Bersama Kami!</h2>
+                <p>Jika kamu tertarik untuk bergabung, silakan isi formulir pendaftaran di bawah ini:</p>
+                <form>
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap">
+                    
+                    <label for="age">Usia:</label>
+                    <input type="number" id="age" name="age" required placeholder="Masukkan usia" min="1" max="17">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Masukkan email">
+                    
+                    <label for="interest">Minat:</label>
+                    <input type="text" id="interest" name="interest" required placeholder="Programming/Editing/Desain">
+                    
+                    <input type="submit" value="Daftar Sekarang">
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 KiloGram Studios. Semua hak dilindungi.</p>
+            <p>Komunitas kreatif untuk generasi muda Indonesia</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling untuk navigasi
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const age = parseInt(document.getElementById('age').value);
+            
+            if (age > 17) {
+                alert('Maaf, KiloGram Studios khusus untuk anggota di bawah 17 tahun.');
+                return;
+            }
+            
+            alert('Pendaftaran berhasil! Kami akan menghubungi kamu segera.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
